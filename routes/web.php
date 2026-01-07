@@ -15,6 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('contacts','contacts');
+Route::view('contacts', 'contacts');
 
-Route::view('about','about');
+Route::view('about', 'about');
+
+Route::get('/customers', function () {
+
+    $customers = [
+        'gourab',
+        'chandra',
+        'biswas'
+    ];
+
+    return view('internals/customers', [
+        'customers' => $customers,
+    ]);
+});
