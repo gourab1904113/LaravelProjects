@@ -6,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>Contacts</h1>
-
+     <h1>About us</h1>
 </body>
 </html>
