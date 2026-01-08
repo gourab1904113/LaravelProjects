@@ -20,6 +20,11 @@ class CustomersController extends Controller
 
     public function store()
     {
+
+
+        $data = request()->validate([
+            'name' => 'required|string'
+        ]);
         request('name');
 
         $customer = new Customer();
