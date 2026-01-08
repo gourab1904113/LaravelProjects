@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
+@section('content')
     <h1>Customers</h1>
-
     <u1>
         @foreach ($customers as $customer)
         <li>{{$customer}}</li>
         @endforeach
     </u1>
-</body>
 
-</html>
+@endsection

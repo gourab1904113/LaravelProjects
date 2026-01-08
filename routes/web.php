@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::view('contacts', 'contacts');
 
-Route::view('about', 'about');
+Route::view('abouts', 'about');
 
 Route::get('/customers', 'CustomersController@list');
