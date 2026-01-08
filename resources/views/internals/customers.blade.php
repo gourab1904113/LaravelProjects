@@ -9,16 +9,18 @@
     <div class="mb-3">
         <div class="input-group mb-3">
             <label>Name : </label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{ old('name')}}">
+            <div>
+                {{$errors->first('name')}}
+            </div>
         </div>
 
         <div class="input-group mb-3">
             <label>Email : </label>
-            <input type="email" name="email">
-        </div>
-
-        <div>
-            {{$errors->first('name')}}
+            <input type="email" name="email" value="{{ old('email')}}">
+            <div>
+                {{$errors->first('email')}}
+            </div>
         </div>
 
 
@@ -32,7 +34,7 @@
 
 <u1>
     @foreach ($customers as $customer)
-    <li>{{$customer->name}}</li>
+    <li>{{$customer->name}} {{$customer->email}}</li>
     @endforeach
 </u1>
 

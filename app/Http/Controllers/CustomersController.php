@@ -23,12 +23,13 @@ class CustomersController extends Controller
 
 
         $data = request()->validate([
-            'name' => 'required|string'
+            'name' => 'required|string',
+            'email' => 'required|email'
         ]);
-        request('name');
 
         $customer = new Customer();
         $customer->name = request('name');
+        $customer->email = request('email');
         $customer->save();
 
 
