@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use Illuminate\Http\Request;
+use PDO;
 
 class CustomersController extends Controller
 {
@@ -15,5 +16,17 @@ class CustomersController extends Controller
         return view('internals/customers', [
             'customers' => $customers,
         ]);
+    }
+
+    public function store()
+    {
+        request('name');
+
+        $customer = new Customer();
+        $customer->name = request('name');
+        $customer->save();
+
+
+        return back();
     }
 }
