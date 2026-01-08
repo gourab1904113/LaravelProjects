@@ -5,7 +5,7 @@
     <h1>Customers</h1>
     <u1>
         @foreach ($customers as $customer)
-        <li>{{$customer}}</li>
+        <li>{{$customer->name}}</li>
         @endforeach
     </u1>
 
