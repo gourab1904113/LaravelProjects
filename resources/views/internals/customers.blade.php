@@ -29,10 +29,19 @@
                     </div>
                 </div>
 
+                <div class="form-group mb-88">
+                     <label for='status'> Status : </label>
+                     <select name='status'>
+                          <option disabled> Select customer status</option>
+                          <option value="1">Active</option>
+                          <option value="0">Inactive</option>
+                     </select>
+                <div>
+
 
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Customer</button>
+            <button type="submit" class="btn btn-primary mt-3">Add Customer</button>
 
             @csrf
         </form>
@@ -41,12 +50,21 @@
 
 
 <div class="row">
-    <div class="col-12">
-    <u1>
-        @foreach ($customers as $customer)
-        <li>{{$customer->name}} {{$customer->email}}</li>
-        @endforeach
-    </u1>
+    <div class="col-6">
+        <h3> Active Customers </h3>
+        <u1>
+            @foreach ($activeCustomers as $customer)
+            <li>{{$customer->name}} {{$customer->email}}</li>
+            @endforeach
+        </u1>
+    </div>
+     <div class="col-6">
+        <h3> Inactive Customers </h3>
+        <u1>
+            @foreach ($inactiveCustomers as $customer)
+            <li>{{$customer->name}} {{$customer->email}}</li>
+            @endforeach
+        </u1>
     </div>
 </div>
 
