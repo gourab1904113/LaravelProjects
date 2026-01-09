@@ -13,6 +13,10 @@ class Customer extends Model
     //Guarded by mass assignment
     protected $guarded = [];
 
+    public function company(){
+       return $this->belongsTo(Company::class());
+    }
+
     public function scopeActive($query){
       return $query->where('status', 1);
     }
@@ -20,4 +24,6 @@ class Customer extends Model
     public function scopeInactive($query){
       return $query->where('status',0);
     }
+
+
 }
