@@ -11,8 +11,8 @@ class CustomersController extends Controller
     public function list()
     {
 
-        $activeCustomers = Customer::where('status', 1)->get();
-        $inactiveCustomers = Customer::where('status',0)->get();
+        $activeCustomers = Customer::active()->get();
+        $inactiveCustomers = Customer::inactive()->get();
 
         // return view('internals/customers', [
         //     'activeCustomers' => $activeCustomers,
@@ -30,14 +30,7 @@ class CustomersController extends Controller
             'status' => 'required'
         ]);
 
-
-
-        $customer = new Customer();
-        $customer->name = request('name');
-        $customer->email = request('email');
-        $customer->status = request('status');
-        $customer->save();
-
+        Customer::create($data);
 
         return back();
     }
