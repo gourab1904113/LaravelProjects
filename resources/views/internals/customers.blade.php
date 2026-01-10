@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="form-group mb-88">
+                <div class="form-group mb-3">
                      <label for='status'> Status : </label>
                      <select name='status'>
                           <option disabled> Select customer status</option>
@@ -37,6 +37,17 @@
                           <option value="0">Inactive</option>
                      </select>
                 <div>
+
+                 <div class="form-group mb-3">
+                     <label for='company_id'> Companies : </label>
+                     <select name='company_id'>
+                          <option disabled> Select Company</option>
+                          @foreach ($companies as $company)
+                             <option value="{{ $company->id }}">{{$company->name}}</option>
+                          @endforeach
+                     </select>
+                <div>
+
 
 
             </div>
@@ -54,7 +65,7 @@
         <h3> Active Customers </h3>
         <u1>
             @foreach ($activeCustomers as $customer)
-            <li>{{$customer->name}} {{$customer->email}}</li>
+            <li>{{$customer->name}} {{$customer->email}} {{$customer->company->name}}</li>
             @endforeach
         </u1>
     </div>
@@ -65,6 +76,26 @@
             <li>{{$customer->name}} {{$customer->email}}</li>
             @endforeach
         </u1>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-6">
+        @foreach ($companies as $company)
+            <h3> Company name: {{$company->name}} </h3>
+
+             <h2>Users:</h2>
+
+             <ul>
+                  @foreach ($company->customers as $customer)
+                    <li>{{$customer->name}}</li>
+                  @endforeach
+             </ul>
+
+
+        @endforeach
+
     </div>
 </div>
 
