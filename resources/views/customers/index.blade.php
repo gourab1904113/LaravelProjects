@@ -17,7 +17,11 @@
    @foreach ($customers as $customer)
       <div class="row">
         <div class="col-2">{{$customer->id}}</div>
-        <div class="col-2">{{$customer->name}}</div>
+        <div class="col-2">
+          <a href="/customers/{{ $customer->id }}">
+               {{$customer->name}}
+          </a>
+        </div>
         <div class="col-4">{{$customer->email}}</div>
         <div class="col-2">{{$customer->company->name}}</div>
         <div class="col-2">{{$customer->status}}</div>
