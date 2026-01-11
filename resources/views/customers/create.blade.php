@@ -1,16 +1,16 @@
 @extends('layout')
 
 @section('title')
-  Customer
+  Add new customer
 @endsection
 
 @section('content')
 
 <div class="row">
     <div class="col-12">
-        <h1>Customers</h1>
+        <h1>Add New Customer:</h1>
 
-        <form action="customers" method="POST" class="pb-5">
+        <form action="/customers" method="POST" class="pb-5">
 
             <div class="mb-3">
                 <div class="form-group mb-3">
@@ -60,43 +60,5 @@
 </div>
 
 
-<div class="row">
-    <div class="col-6">
-        <h3> Active Customers </h3>
-        <u1>
-            @foreach ($activeCustomers as $customer)
-            <li>{{$customer->name}} {{$customer->email}} {{$customer->company->name}}</li>
-            @endforeach
-        </u1>
-    </div>
-     <div class="col-6">
-        <h3> Inactive Customers </h3>
-        <u1>
-            @foreach ($inactiveCustomers as $customer)
-            <li>{{$customer->name}} {{$customer->email}}</li>
-            @endforeach
-        </u1>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-6">
-        @foreach ($companies as $company)
-            <h3> Company name: {{$company->name}} </h3>
-
-             <h2>Users:</h2>
-
-             <ul>
-                  @foreach ($company->customers as $customer)
-                    <li>{{$customer->name}}</li>
-                  @endforeach
-             </ul>
-
-
-        @endforeach
-
-    </div>
-</div>
 
 @endsection
