@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 @section('title')
@@ -10,11 +11,11 @@
     <div class="col-12">
         <h1>Add New Customer:</h1>
 
-        <form action="/customers" method="POST" class="pb-5">
-
+        <form action="/customers/{{ $customer->id }}" method="POST" class="pb-5">
+            @method('PATCH')
             @include('customers.form')
 
-            <button type="submit" class="btn btn-primary mt-3">Add Customer</button>
+            <button type="submit" class="btn btn-primary mt-3">Update Customer</button>
         </form>
     </div>
 </div>

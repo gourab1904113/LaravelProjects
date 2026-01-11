@@ -19,5 +19,3 @@
             </div>
         </nav>
     </nav>
-
-    <div>{{$username}}</div>
